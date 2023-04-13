@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ленина Ксения</title>
+</head>
+<body>
+<script>
+    let wordsArr = ["Тщиться", "Чума", "Отчуждение", "Завязить", "Неймется", "Рыба", "Машина"];
+    let count = 0;
+
+    wordsArr.forEach(word => {
+        if (word.toLowerCase().indexOf("и") !== -1) {
+            count++;
+        }
+    })
+
+    document.write(`<p>${wordsArr.join(" ")}</p>`);
+    document.write(`<p>Количество слов содержащих букву "и" = ${count}</p>`);
+    
+    let buf = wordsArr[0];
+    wordsArr[0] = wordsArr[1];
+    wordsArr[1] = buf;
+    document.write(`<p>${wordsArr.join(" ")}</p>`);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ленина Ксения</title>
+</head>
+<body>
+<script>
+    // Получаем строку для шифрования
+    const originalString = "Пример строки для шифрования на JavaScript";
+
+    // Создаем переменную для хранения зашифрованной строки
+    let encryptedString = "";
+
+    // Проходим по каждому символу в исходной строке
+    for (let i = 0; i < originalString.length; i++) {
+        // Получаем код символа
+        const charCode = originalString.charCodeAt(i);
+
+        // Если символ является буквой русского алфавита (коды символов в диапазоне от 1040 до 1103),
+        // то заменяем его на следующий символ в алфавите
+        if (charCode >= 1040 && charCode <= 1103) {
+            const nextCharCode = charCode == 1103 ? 1040 : charCode + 1;
+            encryptedString += String.fromCharCode(nextCharCode);
+        } else {
+            // Если символ не является буквой русского алфавита, то оставляем его без изменений
+            encryptedString += originalString[i];
+        }
+    }
+    // Выводим зашифрованную строку в HTML-документе
+    document.write(`<p>Исходная строка: ${originalString}</p>`);
+    document.write(`<p>Зашифрованная строка: ${encryptedString}</p>`);
+</script>
+</body>
+</html>
